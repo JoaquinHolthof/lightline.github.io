@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 4rem;
   background-color: #fff;
   position: sticky;
   top: 0;
@@ -40,7 +40,7 @@ body {
 }
 
 .navbar a {
-  text-decoration: none;
+  text-decoration: none; /* geen onderlijn */
   color: #022bce;
   font-weight: 600;
 }
@@ -54,7 +54,7 @@ body {
 ========================= */
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,12 +76,13 @@ body {
 
 .hero-content {
   z-index: 2;
-  max-width: 500px;
+  max-width: 600px;
+  width: 90%;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 .cta-btn {
@@ -94,6 +95,7 @@ body {
   border-radius: 40px;
   font-weight: 600;
   transition: background 0.3s ease;
+  margin-top: 1rem;
 }
 
 .cta-btn:hover {
@@ -105,21 +107,20 @@ body {
    SECTIONS
 ========================= */
 section {
-  padding: 4rem 2rem;
-}
-
-.content-container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* ABOUT */
-.about {
-  margin: 20px auto;
+  margin: 4rem auto;       /* ruimte boven en onder */
+  padding: 4rem 3rem;      /* interne ruimte */
+  max-width: 1200px;       /* centreren content */
+  box-sizing: border-box;
   border-radius: 30px;
+  background-clip: padding-box;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about {
   background-color: #fffaf0;
   color: #000;
-  padding: 3rem 2rem;
 }
 
 .about h2 {
@@ -132,18 +133,17 @@ section {
   line-height: 1.6;
 }
 
-/* CONCEPT */
+/* =========================
+   CONCEPT
+========================= */
 .concept {
-  margin: 20px auto;
-  border-radius: 30px;
   background-color: #f8f8ff;
-  padding: 3rem 2rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 3rem;
   align-items: start;
 }
 
@@ -158,12 +158,11 @@ section {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* LOCATION */
+/* =========================
+   LOCATION
+========================= */
 .location {
-  margin: 20px auto;
-  border-radius: 30px;
   background-color: #fffaec;
-  padding: 3rem 2rem;
 }
 
 .location h2 {
@@ -171,7 +170,7 @@ section {
   margin-bottom: 1rem;
 }
 
-.location .map iframe {
+.location .map img, .location .map iframe {
   width: 100%;
   min-height: 250px;
   border-radius: 16px;
@@ -188,7 +187,46 @@ section {
   text-align: left;
 }
 
-/* FOOTER */
+/* =========================
+   CONTACT / JOIN
+========================= */
+.contact {
+  background-color: #fffaf0;
+}
+
+.contact h2 {
+  color: #022bce;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* BUTTONS IN CONTACT */
+.contact .btn {
+  text-decoration: none;
+  border: none;
+  border-radius: 40px;
+  padding: 0.9rem 1.8rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.contact .btn-primary {
+  background-color: #ff5e33;
+  color: #fff;
+}
+
+.contact .btn-primary:hover {
+  background-color: #ffe600;
+  color: #000;
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 2rem;
@@ -198,11 +236,17 @@ footer {
 }
 
 /* =========================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE
 ========================= */
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 3rem 2rem;
+    margin: 3rem auto;
+    max-width: 95%;
   }
 
   .hero h1 {
@@ -228,22 +272,14 @@ footer {
   .navbar a {
     font-size: 1rem;
   }
-
-  section {
-    padding: 3rem 1.5rem;
-  }
-
-  .about, .concept, .location {
-    padding: 2rem 1.5rem;
-    margin: 10px;
-  }
-
-  .mockup img {
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 480px) {
+  section {
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+  }
+
   .hero h1 {
     font-size: 1.5rem;
   }
@@ -251,9 +287,5 @@ footer {
   .cta-btn {
     padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
-  }
-
-  .navbar ul {
-    gap: 0.8rem;
   }
 }
